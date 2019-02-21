@@ -9,12 +9,14 @@
 import Foundation
 import UIKit
 
+// The Codable protocol allows us to use the JSONDecoder to create a quote object.
 struct Quote: Codable {
   var text: String
   var author: String
 
   var image: UIImage?
 
+  // This enum tells the Decoder how to map the keys in the JSON to properties on the struct
   enum CodingKeys: String, CodingKey {
     case text = "quoteText"
     case author = "quoteAuthor"
