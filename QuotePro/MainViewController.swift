@@ -48,6 +48,41 @@ extension MainViewController: UITableViewDataSource {
   }
 }
 
+extension MainViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let quote = quotes[indexPath.row]
+    if let quoteView = loadQuoteView(quote),
+      let image = snapshot(view: quoteView) {
+      // Create a UIActivityViewController
+      let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+
+      // Present it
+      present(activityViewController, animated: true, completion: nil)
+    }
+  }
+
+  private func snapshot(view: UIView) -> UIImage? {
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, true, 0)
+    view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+    let image = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+
+    return image
+  }
+
+  private func loadQuoteView(_ quote: Quote) -> QuoteView? {
+    if let objects = Bundle.main.loadNibNamed("QuoteView", owner: nil, options: nil),
+      let view = objects.first as? QuoteView {
+      view.quote = quote
+      view.image = quote.image
+      view.layoutIfNeeded()
+      return view
+    } else {
+      return nil
+    }
+  }
+}
+
 extension MainViewController: QuoteBuilderDelegate {
   func save(_ quote: Quote) {
     quotes.append(quote)

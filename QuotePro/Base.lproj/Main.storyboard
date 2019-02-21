@@ -60,6 +60,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="ni6-Ec-jt3" id="Uyq-BM-269"/>
+                                    <outlet property="delegate" destination="ni6-Ec-jt3" id="Oa8-F3-f5a"/>
                                 </connections>
                             </tableView>
                         </subviews>

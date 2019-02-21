@@ -6,17 +6,16 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="QuoteView" customModule="QuotePro" customModuleProvider="target">
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="QuoteView" customModule="QuotePro" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="85L-wQ-uxH">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85L-wQ-uxH">
                     <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LmL-Hb-Vf5">
@@ -34,20 +33,19 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="85L-wQ-uxH" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="264-KG-Bh8"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="I4y-gJ-46f" secondAttribute="trailing" constant="20" id="5as-Xu-wnp"/>
-                <constraint firstItem="I4y-gJ-46f" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="AnG-bf-5WB"/>
+                <constraint firstItem="85L-wQ-uxH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="264-KG-Bh8"/>
+                <constraint firstAttribute="trailing" secondItem="I4y-gJ-46f" secondAttribute="trailing" constant="20" id="5as-Xu-wnp"/>
+                <constraint firstItem="I4y-gJ-46f" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="AnG-bf-5WB"/>
                 <constraint firstItem="I4y-gJ-46f" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Hdb-Ss-EQE"/>
-                <constraint firstItem="I4y-gJ-46f" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Kd9-QO-PGz"/>
-                <constraint firstItem="LmL-Hb-Vf5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="ZKU-sr-kbz"/>
-                <constraint firstItem="85L-wQ-uxH" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="bxl-OW-yJV"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="LmL-Hb-Vf5" secondAttribute="trailing" constant="20" id="pnb-2d-yQw"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="LmL-Hb-Vf5" secondAttribute="bottom" constant="20" id="vIo-DY-jWR"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="85L-wQ-uxH" secondAttribute="bottom" id="yWW-mG-WnT"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="85L-wQ-uxH" secondAttribute="trailing" id="ysg-ZT-8e3"/>
+                <constraint firstItem="I4y-gJ-46f" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Kd9-QO-PGz"/>
+                <constraint firstItem="LmL-Hb-Vf5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="ZKU-sr-kbz"/>
+                <constraint firstItem="85L-wQ-uxH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bxl-OW-yJV"/>
+                <constraint firstAttribute="trailing" secondItem="LmL-Hb-Vf5" secondAttribute="trailing" constant="20" id="pnb-2d-yQw"/>
+                <constraint firstAttribute="bottom" secondItem="LmL-Hb-Vf5" secondAttribute="bottom" constant="20" id="vIo-DY-jWR"/>
+                <constraint firstAttribute="bottom" secondItem="85L-wQ-uxH" secondAttribute="bottom" id="yWW-mG-WnT"/>
+                <constraint firstAttribute="trailing" secondItem="85L-wQ-uxH" secondAttribute="trailing" id="ysg-ZT-8e3"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="authorLabel" destination="LmL-Hb-Vf5" id="rc6-1e-Me1"/>
                 <outlet property="imageView" destination="85L-wQ-uxH" id="fgb-YT-kW1"/>
